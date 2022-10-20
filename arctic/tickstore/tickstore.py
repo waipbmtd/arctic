@@ -702,7 +702,7 @@ class TickStore(object):
         rtn[END] = end
         rtn[START] = start
 
-        logger.warning("NB treating all values as 'exists' - no longer sparse")
+        # logger.warning("NB treating all values as 'exists' - no longer sparse")
         rowmask = Binary(lz4_compressHC(np.packbits(np.ones(len(df), dtype='uint8')).tostring()))
 
         index_name = df.index.names[0] or "index"
